@@ -1,17 +1,17 @@
-import org.sql2o.*;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
+import org.sql2o.*;
 
 public class Ranger{
   public int id;
   public String name;
-  // public String badge;
+  public String badge;
   // public int stationId;
 
-  public Ranger(String name) {
+  public Ranger(String name, String badge) {
     this.id = id;
     this.name = name;
-    // this.badge = badge;
+    this.badge = badge;
     // this.stationId = stationId;
   }
 
@@ -21,6 +21,10 @@ public class Ranger{
 
   public String getName() {
     return name;
+  }
+
+  public String getBadge(){
+    return badge;
   }
 
   @Override
@@ -38,18 +42,19 @@ public class Ranger{
       String sql = "INSERT INTO rangers(name) VALUES (:name);";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", this.name)
+        .throwOnMappingFailure(false)
         .executeUpdate()
         .getKey();
     }
   }
 
-  // public static List<Ranger> all() {
-  //   String sql = "SELECT * FROM rangers;";
-  //   try(Connection con = DB.sql2o.open()) {
-  //     return con.createQuery(sql).exectueAndFetch(Ranger.class);
-  //   }
-  // }
-  //
+  public static List<Ranger> all() {
+    String sql = "SELECT * FROM rangers;";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).executeAndFetch(Ranger.class);
+    }
+  }
+
   // public static Ranger find(int id) {
   //   try(Connection con = DB.sql20.open()) {
   //     String sql = "SELECT * FROM rangers WHERE id = :id;";

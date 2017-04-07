@@ -11,29 +11,43 @@ public class RangerTest {
 
   @Test
   public void Ranger_instantiatesCorrectly_true() {
-    Ranger ranger = new Ranger ("Wild Bill");
+    Ranger ranger = new Ranger ("Wild Bill", "K1234");
     assertEquals(true, ranger instanceof Ranger);
   }
 
   @Test
   public void Ranger_instantiatesWithId_int() {
-    Ranger newRanger = new Ranger("Wild Bill");
+    Ranger newRanger = new Ranger("Wild Bill", "K1234");
     newRanger.save();
     assertTrue(newRanger.getId() > 0);
   }
 
   @Test
   public void Ranger_instantiatesWithName_string() {
-    Ranger ranger = new Ranger("Ray");
+    Ranger ranger = new Ranger("Ray", "K1234");
     ranger.save();
     assertEquals("Ray", ranger.getName());
   }
 
   @Test
-  public void returnRanger_retunsTrueIfNameEnteredIntoDBAreReturnedCorrectly_true() {
-    Ranger ranger = new Ranger("Ray");
-    Ranger newRanger = new Ranger("Ray");
+  public void Ranger_instantiatesWithBadge_string(){
+    Ranger ranger = new Ranger("Ray", "K1234");
+    ranger.save();
+    assertEquals("K1234", ranger.getBadge());
+  }
+
+  @Test
+  public void equals_retunsTrueIfNameEnteredIntoDBAreReturnedCorrectly_true() {
+    Ranger ranger = new Ranger("Ray", "K1234");
+    Ranger newRanger = new Ranger("Ray", "K1234");
     assertTrue(ranger.equals(newRanger));
   }
+
+  // @Test
+  // public void save_savesRangerIntoDatabase_true() {
+  //   Ranger ranger = new Ranger("Ray", "K1234");
+  //   ranger.save();
+  //   assertTrue(Ranger.all().get(0).equals(ranger));
+  // }
 
 }
