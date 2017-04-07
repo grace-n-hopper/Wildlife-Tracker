@@ -10,7 +10,7 @@ public class AnimalTest {
   public DatabaseRule database = new DatabaseRule();
 
   @Test
-  public void animal_instantiatesCorrectly_false() {
+  public void animal_instantiatesCorrectly_true() {
     Animal testAnimal = new Animal("Deer");
     assertEquals(true, testAnimal instanceof Animal);
   }
