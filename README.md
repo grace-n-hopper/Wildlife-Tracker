@@ -31,6 +31,8 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 * `CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);`
 * `CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;`
 
+### Database Diagram
+[Click here](https://www.lucidchart.com/documents/view/3e2254ed-e6fe-41da-bcc7-6c7e371cd624)  to access link to database diagram.
 
 ### Known Bugs
 > 1. Animal id's are unique based on their category, but not unique across all animals. For example, Gray Wolf is #1 (in endangered_animals), as is Beaver (listed in all animals section). This is causing sightings to be entered for both animals, not the single intended animal, (i.e., user enters sighting of Gray Wolf, and the system enters the sighting for both the Wolf and the Beaver).
