@@ -43,11 +43,11 @@ public class RangerTest {
     assertTrue(ranger.equals(newRanger));
   }
 
-  // @Test
-  // public void save_savesRangerIntoDatabase_true() {
-  //   Ranger ranger = new Ranger("Ray", "K1234");
-  //   ranger.save();
-  //   assertTrue(Ranger.all().get(0).equals(ranger));
-  // }
+  @Test
+  public void save_savesRangerIntoDatabase_true() {
+    Ranger ranger = new Ranger("Ray", "K1234");
+    ranger.save();
+    assertTrue(Ranger.all().get(0).equals(ranger));
+  }
 
 }

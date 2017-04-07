@@ -6,13 +6,11 @@ public class Ranger{
   public int id;
   public String name;
   public String badge;
-  // public int stationId;
 
   public Ranger(String name, String badge) {
     this.id = id;
     this.name = name;
     this.badge = badge;
-    // this.stationId = stationId;
   }
 
   public int getId() {
@@ -39,10 +37,10 @@ public class Ranger{
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO rangers(name) VALUES (:name);";
+      String sql = "INSERT INTO rangers(name, badge) VALUES (:name, :badge);";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", this.name)
-        .throwOnMappingFailure(false)
+        .addParameter("badge", this.badge)
         .executeUpdate()
         .getKey();
     }
