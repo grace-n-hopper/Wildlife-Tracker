@@ -22,4 +22,11 @@ public class RangerTest {
     assertTrue(newRanger.getId() > 0);
   }
 
+  @Test
+  public void Ranger_instantiatesWithName_string() {
+    Ranger ranger = new Ranger("Ray");
+    ranger.save();
+    assertEquals("Ray", ranger.getName());
+  }
+
 }
