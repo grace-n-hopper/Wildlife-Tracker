@@ -29,4 +29,11 @@ public class RangerTest {
     assertEquals("Ray", ranger.getName());
   }
 
+  @Test
+  public void returnRanger_retunsTrueIfNameEnteredIntoDBAreReturnedCorrectly_true() {
+    Ranger ranger = new Ranger("Ray");
+    Ranger newRanger = new Ranger("Ray");
+    assertTrue(ranger.equals(newRanger));
+  }
+
 }
