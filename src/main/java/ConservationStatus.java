@@ -29,20 +29,20 @@ public class ConservationStatus {
     }
   }
 
-  public void save() {
-
-  }
-
-  public void updateName() {
-
-  }
-
-  public static List<ConservationStatus> all() {
-
-  }
-
-  public static ConservationStatus find(int id) {
-
-  }
+  // public void save() {
+  //
+  // }
+  //
+  // public void updateName() {
+  //
+  // }
+  //
+  // public static List<ConservationStatus> all() {
+  //
+  // }
+  //
+  // public static ConservationStatus find(int id) {
+  //
+  // }
 
 }

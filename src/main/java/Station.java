@@ -19,20 +19,20 @@ public class Station {
     return name;
   }
 
-  public void save() {
-
-  }
-
-  public void updateName() {
-
-  }
-
-  public static List<Station> all() {
-
-  }
-
-  public static Station find(int id) {
-    
-  }
+  // public void save() {
+  //
+  // }
+  //
+  // public void updateName() {
+  //
+  // }
+  //
+  // public static List<Station> all() {
+  //
+  // }
+  //
+  // public static Station find(int id) {
+  //
+  // }
 
 }

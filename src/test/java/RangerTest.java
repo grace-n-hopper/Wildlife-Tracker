@@ -15,4 +15,11 @@ public class RangerTest {
     assertEquals(true, ranger instanceof Ranger);
   }
 
+  @Test
+  public void Ranger_instantiatesWithId_int() {
+    Ranger newRanger = new Ranger("Wild Bill");
+    newRanger.save();
+    assertTrue(newRanger.getId() > 0);
+  }
+
 }

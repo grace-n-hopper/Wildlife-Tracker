@@ -25,23 +25,23 @@ public class Location {
     return area;
   }
 
-  public void save() {
-
-  }
-
-  public static Location find(int id) {
-
-  }
-
-  public static List<Location> all() {
-
-  }
-
-  public void updateName() {
-
-  }
-
-  public void updateArea() {
-
-  }
+  // public void save() {
+  //
+  // }
+  //
+  // public static Location find(int id) {
+  //
+  // }
+  //
+  // public static List<Location> all() {
+  //
+  // }
+  //
+  // public void updateName() {
+  //
+  // }
+  //
+  // public void updateArea() {
+  //
+  // }
 }
