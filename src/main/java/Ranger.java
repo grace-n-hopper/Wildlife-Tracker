@@ -63,13 +63,20 @@ public class Ranger{
     }
   }
 
-  // public void updateName(String name) {
-  //
-  // }
-  //
-  // public void updateBadge(String badge) {
-  //
-  // }
+  public void update(String name, String badge) {
+    try(Connection con = DB.sql2o.open()) {
+      String updateName = "UPDATE rangers SET name = :name WHERE id = :id;";
+      String updateBadge = "UPDATE rangers SET badge = :badge WHERE id = :id;";
+      con.createQuery(updateName)
+         .addParameter("name", name)
+         .addParameter("id", id)
+         .executeUpdate();
+      con.createQuery(updateBadge)
+         .addParameter("badge", badge)
+         .addParameter("id", id)
+         .executeUpdate();
+    }
+  }
 
   // public void delete() {
   //   try(Connection con = DB sql2o.open()) {

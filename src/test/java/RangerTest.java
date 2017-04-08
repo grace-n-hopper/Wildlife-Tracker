@@ -67,4 +67,13 @@ public class RangerTest {
     assertEquals(ranger, Ranger.find(ranger.getId()));
   }
 
+  @Test
+  public void update_updatesRangerNameAndOrBadgeInDatabase_string() {
+    Ranger ranger = new Ranger("Ray", "K1234");
+    ranger.save();
+    ranger.update("Rae", "K1235");
+    assertTrue(ranger.find(ranger.getId()).getName().equals("Rae"));
+    assertEquals("K1235", ranger.find(ranger.getId()).getBadge());
+  }
+
 }
