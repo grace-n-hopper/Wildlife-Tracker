@@ -56,14 +56,16 @@ public class RangerTest {
     ranger.save();
     Ranger newRanger = new Ranger("Raymond", "K1235");
     newRanger.save();
-    assertEquals(true, ranger.all().get(0).equals(ranger));
-    assertTrue(ranger.all().get(1).equals(ranger));
+    assertEquals(true, Ranger.all().get(0).equals(ranger));
+    assertTrue(Ranger.all().get(1).equals(ranger));
   }
 
   @Test
   public void find_returnsSpecificRangerFromDatabase_true() {
     Ranger ranger = new Ranger("Ray", "K1234");
     ranger.save();
+    Ranger newRanger = new Ranger("Raymond", "K1235");
+    newRanger.save();
     assertEquals(ranger, Ranger.find(ranger.getId()));
   }
 
