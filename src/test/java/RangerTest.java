@@ -72,8 +72,16 @@ public class RangerTest {
     Ranger ranger = new Ranger("Ray", "K1234");
     ranger.save();
     ranger.update("Rae", "K1235");
-    assertTrue(ranger.find(ranger.getId()).getName().equals("Rae"));
-    assertEquals("K1235", ranger.find(ranger.getId()).getBadge());
+    assertTrue(Ranger.find(ranger.getId()).getName().equals("Rae"));
+    assertEquals("K1235", Ranger.find(ranger.getId()).getBadge());
+  }
+
+  @Test
+  public void delete_deletestRanger_null() {
+    Ranger ranger = new Ranger("Ray", "K1234");
+    ranger.save();
+    ranger.delete();
+    assertEquals(null, Ranger.find(ranger.getId()));
   }
 
 }

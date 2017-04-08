@@ -78,12 +78,12 @@ public class Ranger{
     }
   }
 
-  // public void delete() {
-  //   try(Connection con = DB sql2o.open()) {
-  //     String sql = "DELETE FROM rangers WHERE id = :id;";
-  //     con.createQuery(sql)
-  //       .addParameter("id", id);
-  //       .executeUpdate();
-  //   }
-  // }
+  public void delete() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "DELETE FROM rangers WHERE id = :id;";
+      con.createQuery(sql)
+        .addParameter("id", id)
+        .executeUpdate();
+    }
+  }
 }
