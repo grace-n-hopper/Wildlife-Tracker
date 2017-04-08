@@ -10,27 +10,27 @@ public class RangerTest {
   public DatabaseRule database = new DatabaseRule();
 
   @Test
-  public void Ranger_instantiatesCorrectly_true() {
+  public void Ranger_rangerInstantiatesCorrectly_true() {
     Ranger ranger = new Ranger ("Wild Bill", "K1234");
     assertEquals(true, ranger instanceof Ranger);
   }
 
   @Test
-  public void Ranger_instantiatesWithId_int() {
+  public void getId_rangerInstantiatesWithId_int() {
     Ranger newRanger = new Ranger("Wild Bill", "K1234");
     newRanger.save();
     assertTrue(newRanger.getId() > 0);
   }
 
   @Test
-  public void Ranger_instantiatesWithName_string() {
+  public void getName_RangerInstantiatesWithName_string() {
     Ranger ranger = new Ranger("Ray", "K1234");
     ranger.save();
     assertEquals("Ray", ranger.getName());
   }
 
   @Test
-  public void Ranger_instantiatesWithBadge_string(){
+  public void getBadge_rangerInstantiatesWithBadge_string(){
     Ranger ranger = new Ranger("Ray", "K1234");
     ranger.save();
     assertEquals("K1234", ranger.getBadge());
