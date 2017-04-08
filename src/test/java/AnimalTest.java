@@ -25,6 +25,7 @@ public class AnimalTest {
   @Test
   public void getName_animalInstantiatesWithName_Deer() {
     Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
     assertEquals("Deer", testAnimal.getName());
   }
 
