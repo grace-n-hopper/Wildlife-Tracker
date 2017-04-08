@@ -16,6 +16,13 @@ public class AnimalTest {
   }
 
   @Test
+  public void getId_instantiatesAnimalWithId_true() {
+    Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
+    assertTrue(testAnimal.getId() > 0);
+  }
+
+  @Test
   public void getName_animalInstantiatesWithName_Deer() {
     Animal testAnimal = new Animal("Deer");
     assertEquals("Deer", testAnimal.getName());
@@ -55,6 +62,13 @@ public class AnimalTest {
     assertEquals(Animal.find(secondAnimal.getId()), secondAnimal);
   }
 
+  public void updateName_updatesAnimalNameInDatabase_String() {
+    Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
+    testAnimal.updateName("Buck");
+    assertEquals("Buck", testAnimal.getName());
+  }
+
   @Test
   public void delete_deletesAnimalFromDatabase_0() {
     Animal testAnimal = new Animal("Deer");
@@ -63,13 +77,7 @@ public class AnimalTest {
     assertEquals(0, Animal.all().size());
   }
 
-  public void updateName_updatesAnimalNameInDatabase_String() {
-    Animal testAnimal = new Animal("Deer");
-    testAnimal.save();
-    testAnimal.updateName("Buck");
-    assertEquals("Buck", testAnimal.getName());
-  }
-
+//need to research if needed and written correctly
   @Test
   public void find_returnsNullWhenNoAnimalFound_null() {
     assertTrue(Animal.find(999) == null);
