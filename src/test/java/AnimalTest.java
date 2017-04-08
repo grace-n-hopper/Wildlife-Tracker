@@ -48,7 +48,7 @@ public class AnimalTest {
   }
 
   @Test
-  public void all_returnsAllInstancesOfAnimal_false() {
+  public void all_returnsAllInstancesOfAnimal_true() {
     Animal firstAnimal = new Animal("Deer");
     firstAnimal.save();
     Animal secondAnimal = new Animal("Black Bear");
