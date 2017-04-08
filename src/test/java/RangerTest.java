@@ -50,4 +50,14 @@ public class RangerTest {
     assertTrue(Ranger.all().get(0).equals(ranger));
   }
 
+  @Test
+  public void all_returnsAllRangersFromDatabase_true() {
+    Ranger ranger = new Ranger("Ray", "K1234");
+    ranger.save();
+    Ranger newRanger = new Ranger("Raymond", "K1235");
+    newRanger.save();
+    assertEquals(true, ranger.all().get(0).equals(ranger));
+    assertTrue(ranger.all().get(1).equals(ranger));
+  }
+
 }
