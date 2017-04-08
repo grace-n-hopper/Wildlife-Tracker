@@ -53,16 +53,16 @@ public class Ranger{
     }
   }
 
-  // public static Ranger find(int id) {
-  //   try(Connection con = DB.sql20.open()) {
-  //     String sql = "SELECT * FROM rangers WHERE id = :id;";
-  //     Ranger ranger = con.createQuery(sql)
-  //       .addParameter("id", id)
-  //       .executeAndFetchFirst(Ranger.class);
-  //     return ranger;
-  //   }
-  // }
-  //
+  public static Ranger find(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM rangers WHERE id = :id;";
+      Ranger ranger = con.createQuery(sql)
+        .addParameter("id", id)
+        .executeAndFetchFirst(Ranger.class);
+      return ranger;
+    }
+  }
+
   // public void updateName(String name) {
   //
   // }

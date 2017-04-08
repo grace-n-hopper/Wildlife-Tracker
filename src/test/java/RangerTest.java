@@ -60,4 +60,11 @@ public class RangerTest {
     assertTrue(ranger.all().get(1).equals(ranger));
   }
 
+  @Test
+  public void find_returnsSpecificRangerFromDatabase_true() {
+    Ranger ranger = new Ranger("Ray", "K1234");
+    ranger.save();
+    assertEquals(ranger, Ranger.find(ranger.getId()));
+  }
+
 }
