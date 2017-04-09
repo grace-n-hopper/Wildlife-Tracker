@@ -60,7 +60,7 @@ public class App {
 
     post("/animal/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      boolean endangered = request.queryParamsValues("endangered")!=null;
+      boolean endangered = request.queryParams("endangered")!=null;
       if (endangered) {
         String name = request.queryParams("name");
         String health = request.queryParams("health");
