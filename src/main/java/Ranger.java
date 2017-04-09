@@ -5,9 +5,9 @@ import org.sql2o.*;
 public class Ranger{
   public int id;
   public String name;
-  public String badge;
+  public int badge;
 
-  public Ranger(String name, String badge) {
+  public Ranger(String name, int badge) {
     this.id = id;
     this.name = name;
     this.badge = badge;
@@ -21,7 +21,7 @@ public class Ranger{
     return name;
   }
 
-  public String getBadge(){
+  public int getBadge(){
     return badge;
   }
 
@@ -32,6 +32,8 @@ public class Ranger{
     } else {
       Ranger newRanger = (Ranger) otherRanger;
       return this.getName().equals(newRanger.getName());
+      // &&
+            //  this.getBadge().equals(newRanger.getBadge());
     }
   }
 
