@@ -20,6 +20,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+//route for adding an endangeredAnimal sighting
     post("/endangered_sighting", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String rangerName = request.queryParams("rangerName");
@@ -35,11 +36,13 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+
+// route for adding non-endangered animal sighting
     post("/sighting", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      String rangerName = request.queryParams("rangerName");
       int animalIdSelected = Integer.parseInt(request.queryParams("animalSelected"));
       String latLong = request.queryParams("latLong");
+      String rangerName = request.queryParams("rangerName");
       Sighting sighting = new Sighting(animalIdSelected, latLong, rangerName);
       sighting.save();
       model.put("sighting", sighting);
@@ -50,16 +53,16 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+// route when clicking on "Add Animal to System"
     get("/animal/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      // model.put("animals", Animal.all());
-      // model.put("endangeredAnimals", EndangeredAnimal.all());
       model.put("template", "templates/animal-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+// route for adding new animal form
     post("/animal/new", (request, response) -> {
-      Map<String, Object> model = new HashMap<String, Object>();
+      // Map<String, Object> model = new HashMap<String, Object>();
       boolean endangered = request.queryParams("endangered")!=null;
       if (endangered) {
         String name = request.queryParams("name");
@@ -67,19 +70,20 @@ public class App {
         String age = request.queryParams("age");
         EndangeredAnimal endangeredAnimal = new EndangeredAnimal(name, health, age);
         endangeredAnimal.save();
-        model.put("animals", Animal.all());
-        model.put("endangeredAnimals", EndangeredAnimal.all());
+        // model.put("animals", Animal.all());
+        // model.put("endangeredAnimals", EndangeredAnimal.all());
       } else {
         String name = request.queryParams("name");
         Animal animal = new Animal(name);
         animal.save();
-        model.put("animals", Animal.all());
-        model.put("endangeredAnimals", EndangeredAnimal.all());
+        // model.put("animals", Animal.all());
+        // model.put("endangeredAnimals", EndangeredAnimal.all());
       }
       response.redirect("/");
         return null;
       });
 
+//route when you click on a non-endangered animal
     get("/animal/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Animal animal = Animal.find(Integer.parseInt(request.params("id")));
@@ -88,6 +92,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+//route when you click on an endangeredAnimal
     get("/endangered_animal/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       EndangeredAnimal endangeredAnimal = EndangeredAnimal.find(Integer.parseInt(request.params("id")));
