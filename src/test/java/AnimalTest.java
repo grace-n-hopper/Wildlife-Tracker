@@ -79,7 +79,6 @@ public class AnimalTest {
     assertEquals(0, Animal.all().size());
   }
 
-//need to research if needed and written correctly
   @Test
   public void find_returnsNullWhenNoAnimalFound_null() {
     assertTrue(Animal.find(999) == null);
