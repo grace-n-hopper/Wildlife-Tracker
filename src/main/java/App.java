@@ -62,7 +62,6 @@ public class App {
 
 // route for adding new animal form
     post("/animal/new", (request, response) -> {
-      // Map<String, Object> model = new HashMap<String, Object>();
       boolean endangered = request.queryParams("endangered")!=null;
       if (endangered) {
         String name = request.queryParams("name");
@@ -70,14 +69,10 @@ public class App {
         String age = request.queryParams("age");
         EndangeredAnimal endangeredAnimal = new EndangeredAnimal(name, health, age);
         endangeredAnimal.save();
-        // model.put("animals", Animal.all());
-        // model.put("endangeredAnimals", EndangeredAnimal.all());
       } else {
         String name = request.queryParams("name");
         Animal animal = new Animal(name);
         animal.save();
-        // model.put("animals", Animal.all());
-        // model.put("endangeredAnimals", EndangeredAnimal.all());
       }
       response.redirect("/");
         return null;
