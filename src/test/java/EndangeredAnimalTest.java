@@ -16,7 +16,7 @@ public class EndangeredAnimalTest {
   }
 
   @Test
-  public void getHealth_returnsHealthAttribute_true() {
+  public void getHealth_returnsHealthAttribute_int() {
     EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
     assertEquals("Healthy", testEndangeredAnimal.getHealth());
   }
