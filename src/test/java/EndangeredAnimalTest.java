@@ -16,10 +16,19 @@ public class EndangeredAnimalTest {
   }
 
   @Test
-  public void getHealth_returnsHealthAttribute_int() {
+  public void getHealth_returnsHealthAttribute_String() {
     EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
     assertEquals("Healthy", testEndangeredAnimal.getHealth());
   }
+
+  @Test
+  public void getAge_returnsEndangeredAnimalAge_String() {
+    EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
+    assertEquals("Young", testEndangeredAnimal.getAge());
+  }
+  //test for getName
+  //test for getId
+  //test for equals
 
   @Test
   public void save_assignsIdAndSavesObjectToDatabase() {
