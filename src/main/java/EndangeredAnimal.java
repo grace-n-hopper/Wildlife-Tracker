@@ -76,11 +76,11 @@ public class EndangeredAnimal {
     try(Connection con = DB.sql2o.open()) {
       String updateHealth = "UPDATE endangered_animals SET health=:health WHERE id=:id;";
       String updateAge = "UPDATE endangered_animals SET age=:age WHERE id=:id;";
-      con.createQuery(updateAge)
+      con.createQuery(updateHealth)
         .addParameter("id", id)
         .addParameter("health", health)
         .executeUpdate();
-      con.createQuery(sql)
+      con.createQuery(updateAge)
         .addParameter("age", age)
         .addParameter("id", id)
         .executeUpdate();

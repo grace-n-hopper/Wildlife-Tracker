@@ -52,8 +52,8 @@ public class EndangeredAnimalTest {
   public void update_updatesHealthAndOrAgeAttribute_true() {
     EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
     testEndangeredAnimal.save();
-    testEndangeredAnimal.updateHealth("ill");
-    assertEquals("ill", EndangeredAnimal.find(testEndangeredAnimal.getId()).getHealth());
-    testEndangeredAnimal.updateAge("Adult");
-    assertEquals("Adult", EndangeredAnimal.find(testEndangeredAnimal.getId()).getAge());
+    testEndangeredAnimal.update("Ill", "Adult");
+    assertTrue(EndangeredAnimal.find(testEndangeredAnimal.getId()).getHealth().equals("Ill"));
+    assertTrue(EndangeredAnimal.find(testEndangeredAnimal.getId()).getAge().equals("Adult"));
   }
+}
