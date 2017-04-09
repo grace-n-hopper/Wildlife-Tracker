@@ -31,9 +31,8 @@ public class Ranger{
       return false;
     } else {
       Ranger newRanger = (Ranger) otherRanger;
-      return this.getName().equals(newRanger.getName());
-      // &&
-            //  this.getBadge().equals(newRanger.getBadge());
+      return this.getName().equals(newRanger.getName()) &&
+             this.getBadge() == newRanger.getBadge();
     }
   }
 
@@ -45,7 +44,7 @@ public class Ranger{
         .addParameter("badge", this.badge)
         .executeUpdate()
         .getKey();
-    // } catch (IllegalArgumentException) {
+    // } catch (IllegalArgumentException exception)  {
     //     return null;
     // need to add this to the vtl ->   System.out.println("Please enter only numbers.");
     }
@@ -68,7 +67,7 @@ public class Ranger{
     }
   }
 
-  public void update(String name, String badge) {
+  public void update(String name, int badge) {
     try(Connection con = DB.sql2o.open()) {
       String updateName = "UPDATE rangers SET name = :name WHERE id = :id;";
       String updateBadge = "UPDATE rangers SET badge = :badge WHERE id = :id;";
