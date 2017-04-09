@@ -26,8 +26,15 @@ public class EndangeredAnimalTest {
     EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
     assertEquals("Young", testEndangeredAnimal.getAge());
   }
-  //test for getName
+
+  @Test
+  public void getName_returnsEndangeredAnimalName_String() {
+    EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
+    assertEquals("Fox", testEndangeredAnimal.getName());
+  }
+
   //test for getId
+
   //test for equals
 
   @Test
