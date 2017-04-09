@@ -45,6 +45,9 @@ public class Ranger{
         .addParameter("badge", this.badge)
         .executeUpdate()
         .getKey();
+    // } catch (IllegalArgumentException) {
+    //     return null;
+    // need to add this to the vtl ->   System.out.println("Please enter only numbers.");
     }
   }
 
