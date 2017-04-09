@@ -49,19 +49,11 @@ public class EndangeredAnimalTest {
   }
 
   @Test
-  public void update_updatesHealthAttribute_true() {
+  public void update_updatesHealthAndOrAgeAttribute_true() {
     EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
     testEndangeredAnimal.save();
     testEndangeredAnimal.updateHealth("ill");
     assertEquals("ill", EndangeredAnimal.find(testEndangeredAnimal.getId()).getHealth());
-  }
-
-  @Test
-  public void update_updatesAgeAttribute_true() {
-    EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
-    testEndangeredAnimal.save();
     testEndangeredAnimal.updateAge("Adult");
     assertEquals("Adult", EndangeredAnimal.find(testEndangeredAnimal.getId()).getAge());
   }
-
-}
