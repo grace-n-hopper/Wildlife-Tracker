@@ -37,9 +37,7 @@ public class AnimalTest {
   }
 
 
-//is name of test correct? Thought it only saves object to database
   @Test
-  //public void save_savesAnimalToDatabase_true() {
   public void save_assignsIdToObjectAndSavesObjectToDatabase() {
     Animal testAnimal = new Animal("Deer");
     testAnimal.save();
