@@ -65,10 +65,10 @@ public class EndangeredAnimal {
   public static EndangeredAnimal find(int id) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM endangered_animals WHERE id=:id;";
-      EndangeredAnimal endangeredanimal = con.createQuery(sql)
+      EndangeredAnimal endangeredAnimal = con.createQuery(sql)
         .addParameter("id", id)
         .executeAndFetchFirst(EndangeredAnimal.class);
-      return endangeredanimal;
+      return endangeredAnimal;
     }
   }
 
