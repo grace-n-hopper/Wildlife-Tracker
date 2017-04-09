@@ -23,10 +23,12 @@ public class App {
 //route for adding an endangeredAnimal sighting
     post("/endangered_sighting", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      String rangerName = request.queryParams("rangerName");
       int animalIdSelected = Integer.parseInt(request.queryParams("endangeredAnimalSelected"));
+      String health = request.queryParams("health");
+      String age = request.queryParams("age");
       String latLong = request.queryParams("latLong");
-      Sighting sighting = new Sighting(animalIdSelected, latLong, rangerName);
+      String rangerName = request.queryParams("rangerName");
+      Sighting sighting = new Sighting(animalIdSelected, health, age, latLong, rangerName);
       sighting.save();
       model.put("sighting", sighting);
       model.put("animals", EndangeredAnimal.all());
@@ -65,8 +67,8 @@ public class App {
       boolean endangered = request.queryParams("endangered")!=null;
       if (endangered) {
         String name = request.queryParams("name");
-        String health = request.queryParams("health");
-        String age = request.queryParams("age");
+        // String health = request.queryParams("health");
+        // String age = request.queryParams("age");
         EndangeredAnimal endangeredAnimal = new EndangeredAnimal(name, health, age);
         endangeredAnimal.save();
       } else {
