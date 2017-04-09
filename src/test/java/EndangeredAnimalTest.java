@@ -42,7 +42,6 @@ public class EndangeredAnimalTest {
     testEndangeredAnimal.save();
     assertTrue(testEndangeredAnimal.getId() > 0);
   }
-  //test for equals
 
   @Test
   public void save_assignsIdAndSavesObjectToDatabase() {
