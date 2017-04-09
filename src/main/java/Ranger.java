@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 import org.sql2o.*;
 
-public class Ranger{
+public class Ranger implements BasicInterface {
   public int id;
   public String name;
   public int badge;
@@ -36,6 +36,7 @@ public class Ranger{
     }
   }
 
+  @Override
   public void save() {
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO rangers(name, badge) VALUES (:name, :badge);";
