@@ -28,11 +28,14 @@ public class App {
       String age = request.queryParams("age");
       String latLong = request.queryParams("latLong");
       String rangerName = request.queryParams("rangerName");
-      Sighting sighting = new Sighting(animalIdSelected, health, age, latLong, rangerName);
+      Sighting sighting = new Sighting(animalIdSelected, latLong, rangerName);
       sighting.save();
-      model.put("sighting", sighting);
-      model.put("animals", EndangeredAnimal.all());
-      String animal = EndangeredAnimal.find(animalIdSelected).getName();
+      // model.put("sighting", sighting);
+      // model.put("animals", EndangeredAnimal.all());
+      // String animal = EndangeredAnimal.find(animalIdSelected).getName();
+      int animalId = Integer.parseInt(request.queryParams("endangeredAnimalSelected"));
+      EndangeredAnimal updatedAnimal = EndangeredAnimal.find(animalId);
+      updatedAnimal.update(health, age);
       model.put("animal", animal);
       model.put("template", "templates/success.vtl");
       return new ModelAndView(model, layout);
@@ -67,9 +70,7 @@ public class App {
       boolean endangered = request.queryParams("endangered")!=null;
       if (endangered) {
         String name = request.queryParams("name");
-        // String health = request.queryParams("health");
-        // String age = request.queryParams("age");
-        EndangeredAnimal endangeredAnimal = new EndangeredAnimal(name, health, age);
+        EndangeredAnimal endangeredAnimal = new EndangeredAnimal(name);
         endangeredAnimal.save();
       } else {
         String name = request.queryParams("name");
