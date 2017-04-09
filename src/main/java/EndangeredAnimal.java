@@ -72,19 +72,14 @@ public class EndangeredAnimal {
     }
   }
 
-  public void updateHealth(String health) {
+  public void update(String health, String age) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE endangered_animals SET health=:health WHERE id=:id;";
-      con.createQuery(sql)
+      String updateHealth = "UPDATE endangered_animals SET health=:health WHERE id=:id;";
+      String updateAge = "UPDATE endangered_animals SET age=:age WHERE id=:id;";
+      con.createQuery(updateAge)
         .addParameter("id", id)
         .addParameter("health", health)
         .executeUpdate();
-    }
-  }
-
-  public void updateAge(String age) {
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE endangered_animals SET age=:age WHERE id=:id;";
       con.createQuery(sql)
         .addParameter("age", age)
         .addParameter("id", id)
