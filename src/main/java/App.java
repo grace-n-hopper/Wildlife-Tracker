@@ -32,7 +32,7 @@ public class App {
       sighting.save();
       // model.put("sighting", sighting);
       // model.put("animals", EndangeredAnimal.all());
-      // String animal = EndangeredAnimal.find(animalIdSelected).getName();
+      String animal = EndangeredAnimal.find(animalIdSelected).getName();
       int animalId = Integer.parseInt(request.queryParams("endangeredAnimalSelected"));
       EndangeredAnimal updatedAnimal = EndangeredAnimal.find(animalId);
       updatedAnimal.update(health, age);
