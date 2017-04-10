@@ -1,9 +1,14 @@
 body {
-  background-color: #5f7534;
-  color: #428bca;
+  background-color: #3c455c;
+  /*color: #428bca;*/
+  color: #9aacb8;
 }
 
 button {
-  background-color: #7e8f5c;
+  background-color: #60412B;
   margin: 10px;
+}
+
+.thumbnails {
+  background-color: #DDE2E3;
 }
