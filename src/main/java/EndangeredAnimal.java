@@ -38,7 +38,7 @@ public class EndangeredAnimal {
       return false;
     } else {
       EndangeredAnimal newEndangeredAnimal = (EndangeredAnimal) otherEndangeredAnimal;
-      return this.getName().equals(newEndangeredAnimal.getName()) && this.getHealth().equals(newEndangeredAnimal.getHealth()) && this.getAge().equals(newEndangeredAnimal.getAge());
+      return this.getName().equals(newEndangeredAnimal.getName());
     }
   }
 
