@@ -37,28 +37,28 @@
     <h3> Report Endangered Animal Sighting </h3>
     <form action="/endangered_sighting" method="post">
       #if($endangeredAnimals.size() >= 0)
-        <SPACER TYPE=VERTICAL SIZE=50><label>Select Endangered Animal</label>
+        <label>Select Endangered Animal</label>
         <select name="endangeredAnimalSelected">
           #foreach($endangered_animal in $endangeredAnimals)
             <option value="$endangered_animal.getId()">$endangered_animal.getName()</option>
           #end
         </select>
-        <SPACER TYPE=HORIZONTAL SIZE=50><label>Health</label>
+        &emsp;<label>Health</label>
         <select name="health">
           <option>Sick</option>
           <option>Okay</option>
           <option>Healthy</option>
         </select>
-        <label>Age</label>
+        &emsp;<label>Age</label>
         <select name="age">
           <option>Newborn</option>
           <option>Young</option>
           <option>Adult</option>
         </select>
         </br>
-        <SPACER TYPE=VERTICAL SIZE=50><label>Location</label>
+        <label>Location</label>
         <input type="text" name="latLong">
-        <label>Your Name</label>
+        &emsp;<label>Your Name</label>
         <input type="text" name="rangerName">
         <small>
           <button type="submit" class="btn">Submit Report</button>
@@ -75,9 +75,9 @@
             <option value="$animal.getId()">$animal.getName()</option>
           #end
         </select>
-        <label>Location</label>
+        &emsp;<label>Location</label>
         <input type="text" name="latLong">
-        <label>Your Name</label>
+        &emsp;<label>Your Name</label>
         <input type="text" name="rangerName">
         <button type="submit" class="btn">Submit Report</button>
       #end
