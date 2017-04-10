@@ -31,21 +31,13 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 * `CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);`
 * `CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;`
 
-### Database Diagram
-[Click here](https://www.lucidchart.com/documents/view/3e2254ed-e6fe-41da-bcc7-6c7e371cd624)  to access link to database diagram.
-
 ### Known Bugs
-> 1. Animal id's are unique based on their category, but not unique across all animals. For example, Gray Wolf is #1 (in endangered_animals), as is Beaver (listed in all animals section). This is causing sightings to be entered for both animals, not the single intended animal, (i.e., user enters sighting of Gray Wolf, and the system enters the sighting for both the Wolf and the Beaver).
-> 2. Endangered animals are not included in the All Animals & Sightings section of the application.
-> 3. Link to each animal includes all text, not just "Click for Details".
 > 4. Can submit empty or invalid characters in a non-endangered animal sighting report.
 > 5. Can submit empty or invalid characters in an endangered animal sighting report.
 > 6. User can submit empty or invalid characters when adding an animal to the system.
 > 7. User can not delete entry.
 > 8. User can not update entry.
 > 9. Recording date of sighting not displayed in details.
-> 10. Data is being saved to regular database, not test database.
-> 11. Date of sighting not saved in database.
 
 ## Technology Used To Create Portfolio
 * Java
