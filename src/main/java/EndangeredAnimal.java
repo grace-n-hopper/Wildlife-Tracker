@@ -67,6 +67,8 @@ public class EndangeredAnimal {
         .addParameter("id", id)
         .executeAndFetchFirst(EndangeredAnimal.class);
       return endangeredAnimal;
+    } catch (IndexOutOfBoundsException exception) {
+      return null;
     }
   }
 

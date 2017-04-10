@@ -79,7 +79,6 @@ public class Animal implements BasicInterface {
     }
   }
 
-//why is this in here, shouldnt it be in sighting class?
   public List<Sighting> getSightings() {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM sightings WHERE animal_id = :id;";
