@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java util.Date;
+import java.util.Date;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Sighting implements BasicInterface {
+  private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
   private int animal_id;
   private String location;
   private String ranger_name;
