@@ -1,13 +1,27 @@
 <!--index.vtl-->
 <div>
   <h1 style="text-align:center">Welcome to Wildlife Tracker</h1>
+  <hr>
 </div>
 <div class="row">
   <div class="col-sm-4">
-    <h3><a href="/animal/new">Add Animal to System</a></h3>
+    <h3>Endangered Animal Sightings</h3>
+    #if ($endangeredAnimals.size() == 0)
+      <a href="/animal/new">Add Animal to Database to Report a Sighting</a>
+    #else
+      #foreach ($endangeredAnimal in $endangeredAnimals)
+        <a href="/endangered_animal/$endangeredAnimal.getId()" class="thumbnail">
+          <h4>$endangeredAnimal.getName()</h4>
+          <h4>$endangeredAnimal.getSightings().size() Reported Sighting(s)</h4>
+          <p>Click for details</p>
+        </a>
+      #end
+    #end
     <hr>
   </div>
   <div class="col-sm-8">
+    <h3><a href="/animal/new">Add Animal to System</a></h3>
+    <hr>
     <h3> Report Endangered Animal Sighting </h3>
     <form action="/endangered_sighting" method="post">
       #if($endangeredAnimals.size() >= 0)
@@ -34,7 +48,9 @@
         <input type="text" name="latLong">
         <label>Your Name</label>
         <input type="text" name="rangerName">
-        <button type="submit" class="btn">Submit Report</button>
+        <small>
+          <button type="submit" class="btn">Submit Report</button>
+        </small>
       #end
     </form>
     <hr>
@@ -42,19 +58,18 @@
 </div>
 <div class="row">
   <div class="col-sm-4">
-    <h3>Endangered Animal Sightings</h3>
-    #if ($endangeredAnimals.size() == 0)
+    <h3>All Animal Sightings</h3>
+    #if ($animals.size() == 0)
       <a href="/animal/new">Add Animal to Database to Report a Sighting</a>
     #else
-      #foreach ($endangeredAnimal in $endangeredAnimals)
-        <a href="/endangered_animal/$endangeredAnimal.getId()" class="thumbnail">
-          <h4>$endangeredAnimal.getName()</h4>
-          <h4>$endangeredAnimal.getSightings().size() Reported Sighting(s)</h4>
+      #foreach ($animal in $animals)
+        <a href="/animal/$animal.getId()" class="thumbnail">
+          <h4>$animal.getName()</h4>
+          <h4>$animal.getSightings().size() Reported Sighting(s)</h4>
           <p>Click for details</p>
         </a>
       #end
     #end
-    <hr>
   </div>
   <div class="col-sm-8">
     <h3>Report Non-Endangered Animal Sighting</h3>
@@ -78,18 +93,7 @@
 </div>
 <div class="row">
   <div class="col-sm-4">
-    <h3>All Animal Sightings</h3>
-    #if ($animals.size() == 0)
-      <a href="/animal/new">Add Animal to Database to Report a Sighting</a>
-    #else
-      #foreach ($animal in $animals)
-        <a href="/animal/$animal.getId()" class="thumbnail">
-          <h4>$animal.getName()</h4>
-          <h4>$animal.getSightings().size() Reported Sighting(s)</h4>
-          <p>Click for details</p>
-        </a>
-      #end
-    #end
+
   </div>
 </div>
 <!--index.vtl-->
