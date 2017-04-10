@@ -18,9 +18,21 @@
       #end
     #end
     <hr>
+    <h3>All Animal Sightings</h3>
+    #if ($animals.size() == 0)
+      <a href="/animal/new">Add Animal to Database to Report a Sighting</a>
+    #else
+      #foreach ($animal in $animals)
+        <a href="/animal/$animal.getId()" class="thumbnail">
+          <h4>$animal.getName()</h4>
+          <h4>$animal.getSightings().size() Reported Sighting(s)</h4>
+          <p>Click for details</p>
+        </a>
+      #end
+    #end
   </div>
   <div class="col-sm-8">
-    <h3><a href="/animal/new">Add Animal to System</a></h3>
+    <h3 style="text-align:center"><a href="/animal/new">Add Animal to System</a></h3>
     <hr>
     <h3> Report Endangered Animal Sighting </h3>
     <form action="/endangered_sighting" method="post">
@@ -54,24 +66,6 @@
       #end
     </form>
     <hr>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-4">
-    <h3>All Animal Sightings</h3>
-    #if ($animals.size() == 0)
-      <a href="/animal/new">Add Animal to Database to Report a Sighting</a>
-    #else
-      #foreach ($animal in $animals)
-        <a href="/animal/$animal.getId()" class="thumbnail">
-          <h4>$animal.getName()</h4>
-          <h4>$animal.getSightings().size() Reported Sighting(s)</h4>
-          <p>Click for details</p>
-        </a>
-      #end
-    #end
-  </div>
-  <div class="col-sm-8">
     <h3>Report Non-Endangered Animal Sighting</h3>
     <form action="/sighting" method="post">
       #if($animals.size() >= 0)
@@ -88,12 +82,6 @@
         <button type="submit" class="btn">Submit Report</button>
       #end
     </form>
-    <hr>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-4">
-
   </div>
 </div>
 <!--index.vtl-->
