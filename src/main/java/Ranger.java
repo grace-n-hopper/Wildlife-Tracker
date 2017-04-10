@@ -65,6 +65,8 @@ public class Ranger implements BasicInterface {
         .addParameter("id", id)
         .executeAndFetchFirst(Ranger.class);
       return ranger;
+    } catch (IndexOutOfBoundsException exception) {
+      return null;
     }
   }
 
