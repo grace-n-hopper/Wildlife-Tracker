@@ -32,12 +32,12 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 * `CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;`
 
 ### Known Bugs
-> 4. Can submit empty or invalid characters in a non-endangered animal sighting report.
-> 5. Can submit empty or invalid characters in an endangered animal sighting report.
-> 6. User can submit empty or invalid characters when adding an animal to the system.
-> 7. User can not delete entry.
-> 8. User can not update entry.
-> 9. Recording date of sighting not displayed in details.
+> 1. Can submit empty or invalid characters in a non-endangered animal sighting report.
+> 2. Can submit empty or invalid characters in an endangered animal sighting report.
+> 3. User can submit empty or invalid characters when adding an animal to the system.
+> 4. User can not delete entry.
+> 5. User can not update entry.
+> 6. Recording date of sighting not displayed in details.
 
 ## Technology Used To Create Portfolio
 * Java
