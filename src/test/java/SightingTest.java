@@ -68,10 +68,4 @@ public class SightingTest {
     secondTestSighting.save();
     assertEquals(Sighting.find(secondTestSighting.getId()), secondTestSighting);
   }
-
-  @Test
-  public void find_returnsNullWhenNoAnimalFound_null() {
-    assertTrue(Animal.find(999) == null);
-  }
-
 }

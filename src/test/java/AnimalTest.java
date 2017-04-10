@@ -78,10 +78,4 @@ public class AnimalTest {
     testAnimal.delete();
     assertEquals(0, Animal.all().size());
   }
-
-  @Test
-  public void find_returnsNullWhenNoAnimalFound_null() {
-    assertTrue(Animal.find(999) == null);
-  }
-
 }
