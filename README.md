@@ -1,11 +1,11 @@
 # _Wildlife Tracker_
 
-#### _Independent Java Project for Epicodus - Week Four: 7 April 2017_
-
-#### By _**Grace Stuart (gstuart)**_
+#### By _**[Grace Stuart](gstuart)**_
 
 ### Description
-Project which I am provided with the code containing the basic classes, Spark setup, VelocityTemplateEngine, vtl template structure, routing in App.java, tests, and database setup instructions, which I am to test, correct errors, and complete the requirements for. The finished project is an application for the forest service to track animals for an environmental impact study.
+> Application for the Forest Service to track animals during an environmental impact study.
+
+Project which I am provided with the code containing the basic classes, Spark setup, VelocityTemplateEngine, vtl template structure, routing in App.java, tests, and database setup instructions, which I am to test, correct errors, and complete the requirements for.
 
 The Forest Service is considering a proposal from a timber company to clearcut a nearby forest of Douglas Fir. Before this proposal may be approved, they must complete an environmental impact study. This application was developed to allow Rangers to track wildlife sightings in the area.
 
@@ -14,12 +14,13 @@ The Forest Service is considering a proposal from a timber company to clearcut a
 2. Install Postgres.
 3. Install Gradle.
 4. Clone this repository onto your desktop. This will place the all files and folders in onto your computer.
-5. Start Postgres in an additional terminal tab, and psql in yet another.
-6. In psql tab enter `CREATE DATABASE wildlife_tracker;`
-7. In terminal tab enter `psql wildlife_tracker < wildlife_tracker.sql`
-8. In psql tab enter `\c wildlife_tracker` then `\dt`
-9. In terminal tab enter `gradle run`
-10. Navigate to 0.0.0.0:4567 in your internet browser
+5. Start Postgres in an additional terminal tab by entering `postgres`.
+6. In yet another terminal windo start psql with `psql`.
+7. In psql tab enter `CREATE DATABASE wildlife_tracker;`.
+8. In terminal tab enter `psql wildlife_tracker < wildlife_tracker.sql`.
+9. In psql tab enter `\c wildlife_tracker` then `\dt`.
+10. In terminal tab enter `gradle run`.
+11. Navigate to 0.0.0.0:4567 in your internet browser.
 
 ### Manual Database Creation
 To create the necessary databases, launch postgres, then psql, and run the following commands:
@@ -30,6 +31,9 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 * `CREATE TABLE endangered_animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar);`
 * `CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar, date TIMESTAMP);`
 * `CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;`
+
+### Usage
+
 
 ### Known Bugs
 > 1. Can submit empty or invalid characters in a non-endangered animal sighting report.
