@@ -43,6 +43,20 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 > 5. User can not update entry.
 > 6. Recording date of sighting not displayed in details.
 
+### Future Work Needed To Deploy
+> 1. Add additional features.
+>
+> 2. Remove reference to junit in build.gradle file
+>
+> 3. Delete test folder and its contents
+>
+> 4. Complete [Recreating Our Database on Heroku](https://www.learnhowtoprogram.com/java/database-basics/optional-going-live-aka-deploying-spark-applications-with-postgres-to-heroku)
+>
+> 5. Deploy by entering in the terminal `mvn heroku:deploy`
+>
+> * If receiving errors when trying to deploy, remove `target` folder and all its contents.
+
+
 ## Technology Used To Create Portfolio
 * Java
 * JUnit
