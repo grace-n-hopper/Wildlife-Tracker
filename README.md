@@ -10,12 +10,12 @@ Project which I am provided with the code containing the basic classes, Spark se
 The Forest Service is considering a proposal from a timber company to clearcut a nearby forest of Douglas Fir. Before this proposal may be approved, they must complete an environmental impact study. This application was developed to allow Rangers to track wildlife sightings in the area.
 
 ### Setup/Installation Requirements
-1. Install Java JRE (Runtime Enviornment).
+1. Install Java JRE (Runtime Environment).
 2. Install Postgres.
 3. Install Gradle.
 4. Clone this repository onto your desktop. This will place the all files and folders in onto your computer.
 5. Start Postgres in an additional terminal tab by entering `postgres`.
-6. In yet another terminal windo start psql with `psql`.
+6. In yet another terminal window start psql with `psql`.
 7. In psql tab enter `CREATE DATABASE wildlife_tracker;`.
 8. In terminal tab enter `psql wildlife_tracker < wildlife_tracker.sql`.
 9. In psql tab enter `\c wildlife_tracker` then `\dt`.
