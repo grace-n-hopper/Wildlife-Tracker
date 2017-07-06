@@ -112,15 +112,20 @@ public class App {
 //route when user clicks "Post Sighting"
     get("/sighting", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-
       model.put("animals", Animal.all());
       model.put("endangeredAnimals", EndangeredAnimal.all());
-
       model.put("template", "templates/sighting.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-
+//route when user clicks "All Animals"
+    get("/sighting", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("animals", Animal.all());
+      model.put("endangeredAnimals", EndangeredAnimal.all());
+      model.put("template", "templates/animals.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
     get("/error", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
