@@ -118,8 +118,8 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-//route when user clicks "All Animals"
-    get("/sighting", (request, response) -> {
+//route when user clicks "All Animals" or "View Animals"
+    get("/animals", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("animals", Animal.all());
       model.put("endangeredAnimals", EndangeredAnimal.all());
