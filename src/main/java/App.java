@@ -14,7 +14,7 @@ public class App {
     }
     return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
   }
-  
+
   public static void main(String[] args) {
 
     port(getHerokuAssignedPort());
@@ -108,6 +108,19 @@ public class App {
       model.put("template", "templates/endangered_animal.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+//route when user clicks "Post Sighting"
+    get("/sighting", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      model.put("animals", Animal.all());
+      model.put("endangeredAnimals", EndangeredAnimal.all());
+
+      model.put("template", "templates/sighting.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
 
     get("/error", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
