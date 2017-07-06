@@ -7,7 +7,7 @@
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1.0</version>
-  
+
   <dependencies>
 
 <!-- We need to list out ALL dependencies our project needs. If you have dependencies not listed here, but sure to add them -->
@@ -72,11 +72,7 @@
         <configuration>
           <jdkVersion>1.8</jdkVersion>
           <!-- Change this to YOUR application name! -->
-<<<<<<< HEAD
           <appName>wildlife-tracker-live</appName>
-=======
-          <appName>wildlife-tracker</appName>
->>>>>>> 4b1ae0bc734f06c91aac14bdd971285943b0f045
           <processTypes>
             <web>java -jar target/my-app-1.0-jar-with-dependencies.jar</web>
           </processTypes>
