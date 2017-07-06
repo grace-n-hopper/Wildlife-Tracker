@@ -80,5 +80,11 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 |Application updates instance details|Grey Wolf|Gray Wolf|
 |Application captures all instances|Gray Wolf, Fox, Beaver|Gray Wolf, Fox, Beaver|
 
+## Sources
+[Trail image](https://unsplash.com/collections/991129/trails?photo=dGDmRqzPID0)
+[Owl image](https://unsplash.com/collections/1039/wildlife?photo=hbqTtTX5TRc)
+[Fox image](https://unsplash.com/collections/1039/wildlife?photo=9rloii_qmmw)
+[Duck image](https://unsplash.com/collections/444531/woodland-animals?photo=yQZgEh4u-Dw)
+
 ### License
 **GLP License** Copyright (c) 2017 **_Grace Stuart_**

@@ -11,3 +11,10 @@ button {
 .thumbnails {
   background-color: #DDE2E3;
 }
+
+#trail {
+  position: relative;
+  display: block;
+  margin: auto;
+  max-height: 400px;
+}
