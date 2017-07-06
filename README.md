@@ -33,7 +33,7 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 * `CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;`
 
 ### Usage
-
+Visit `https://wildlife-tracker-live.herokuapp.com`
 
 ### Known Bugs
 > 1. Can submit empty or invalid characters in a non-endangered animal sighting report.
