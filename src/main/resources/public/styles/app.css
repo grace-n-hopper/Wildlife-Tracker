@@ -12,7 +12,20 @@ button {
   background-color: #DDE2E3;
 }
 
-#trail {
+/*.breadcrumbs {
+  content: before;
+}*/
+
+.navbar {
+  margin-top: 20px;
+}
+
+.form {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.image {
   position: relative;
   display: block;
   margin: auto;
