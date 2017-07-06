@@ -52,7 +52,7 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 Visit `https://wildlife-tracker-live.herokuapp.com`
 
 ### Screen Shots
-<img src="/src/main/resources/images/home.png" alt="Home" width="250"> <img src="/src/main/resources/images/addAnimal.png" alt="Add Animal" width="250"> <img src="/src/main/resources/images/emptyAnimals.png" alt="All Animals prior to adding animals" width="250"> <img src="/src/main/resources/images/animals.png" alt="All Animals post adding animals" width="250"> <img src="/src/main/resources/images/postSighting.png" alt="Post Animal Sighting" width="250"> <img src="/src/main/resources/images/details.png" alt="Animal Details" width="250">
+<img src="/src/main/resources/public/images/home.png" alt="Home" width="250"> <img src="/src/main/resources/public/images/addAnimal.png" alt="Add Animal" width="250"> <img src="/src/main/resources/public/images/emptyAnimals.png" alt="All Animals prior to adding animals" width="250"> <img src="/src/main/resources/public/images/animals.png" alt="All Animals post adding animals" width="250"> <img src="/src/main/resources/public/images/postSightings.png" alt="Post Animal Sighting" width="250"> <img src="/src/main/resources/public/images/details.png" alt="Animal Details" width="250">
 
 ## Known Bugs
 * :bug: = S1
